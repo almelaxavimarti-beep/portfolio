@@ -1,0 +1,108 @@
+<!-- Xavi Almela Marti · Actividad 7 · 27/10/2026 -->
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto · Xavi Almela</title>
+</head>
+
+<body>
+  <a href="#contenido">Saltar al contenido</a>
+
+  <header id="arriba">
+    <h1>Contacto</h1>
+    <nav aria-label="Menú principal">
+      <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="entorno.html">Mi entorno</a></li>
+          <li><a href="sobre-mi.html">Sobre mí</a></li>
+          <li><a href="proyectos.html">Proyectos</a></li>
+          <li><a href="cv.html">CV</a></li>
+          <li><a href="contacto.html" aria-current="page">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="contenido">
+    <section>
+      <h2>Escríbeme</h2>
+      <p>Rellena el formulario y te responderé lo antes posible. Los campos con * son obligatorios.</p>
+
+      <form action="#" method="post">
+        <fieldset>
+          <legend>Tus datos</legend>
+
+          <p>
+            <label for="nombre">Nombre *</label>
+            <input type="text" id="nombre" name="nombre" required>
+          </p>
+
+          <p>
+            <label for="correo">Correo electrónico *</label>
+            <input type="email" id="correo" name="correo" required>
+          </p>
+        </fieldset>
+
+        <fieldset>
+          <legend>Tu mensaje</legend>
+
+          <p>
+            <label for="motivo">Motivo</label>
+            <select id="motivo" name="motivo">
+              <option value="proyecto">Un proyecto</option>
+              <option value="practicas">Prácticas en empresa</option>
+              <option value="duda">Una duda</option>
+              <option value="otro">Otro</option>
+            </select>
+          </p>
+
+          <fieldset>
+            <legend>¿Cómo me has conocido?</legend>
+            <p>
+              <input type="radio" id="conocido-github" name="conocido" value="github">
+              <label for="conocido-github">GitHub</label>
+            </p>
+            <p>
+              <input type="radio" id="conocido-clase" name="conocido" value="clase">
+              <label for="conocido-clase">Clase</label>
+            </p>
+            <p>
+              <input type="radio" id="conocido-otro" name="conocido" value="otro">
+              <label for="conocido-otro">Otro</label>
+            </p>
+          </fieldset>
+
+          <p>
+            <label for="mensaje">Mensaje (máximo 500 caracteres)</label>
+            <textarea id="mensaje" name="mensaje" rows="6" cols="40" maxlength="500"></textarea>
+          </p>
+
+          <p>
+            <input type="checkbox" id="privacidad" name="privacidad" required>
+            <label for="privacidad">He leído y acepto la política de privacidad *</label>
+          </p>
+        </fieldset>
+
+        <p><button type="submit">Enviar mensaje</button></p>
+      </form>
+    </section>
+
+    <section>
+      <h2>Otras formas de contacto</h2>
+      <ul>
+        <li>Por correo: <a href="mailto:almelaxavimarti@gmail.com">almelaxavimarti@gmail.com</a></li>
+        <li>En GitHub: <a href="https://github.com/almelaxavimarti-beep" target="_blank" rel="noopener noreferrer">mi perfil de GitHub (se abre en otra pestaña)</a></li>
+      </ul>
+    </section>
+
+    <p><a href="#arriba">Volver arriba</a></p>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Xavi Almela Marti · <a href="https://github.com/almelaxavimarti-beep" target="_blank" rel="noopener noreferrer">Mi perfil de GitHub (se abre en otra pestaña)</a></p>
+  </footer>
+</body>
+
+</html>
