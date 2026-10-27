@@ -1,4 +1,4 @@
-<!-- TU NOMBRE Y APELLIDO · 02/10/2026 -->
+<!-- Xavi Almela Marti · Actividad 7 · 27/10/2026 -->
 <!DOCTYPE html>
 <html lang="es">
 
@@ -9,67 +9,109 @@
 </head>
 
 <body>
-  <h1>Xavi Almela</h1>
+  <a href="#contenido">Saltar al contenido</a>
 
-  <h2>Sobre mí</h2>
-  <p>
-    Soy estudiante de <strong> 1.º de DAM </strong>
-    y estoy dando mis primeros pasos en el mundo de la programación. Me gusta entender
-    <em>cómo funcionan las cosas por dentro</em>.
-  </p>
-  
-  <h2>Qué sé hacer</h2>
-  <p>Mis intereses:</p>
-  <ul>
-    <li>La programación y la tecnología</li>
-    <li>Los videojuegos</li>
-    <li>La música</li>
-    <li>El deporte</li>
-  </ul>
-
-  <p>Mis habilidades, agrupadas:</p>
-  <ul>
-    <li>Informática
+  <header id="arriba">
+    <h1>Xavi Almela</h1>
+    <nav aria-label="Menú principal">
       <ul>
-        <li>Velocidad en las manos</li>
-        <li>Usar comandos básicos de Linux</li>
-        <li>Trabajar con VS Code bastante bien</li>
+          <li><a href="index.html" aria-current="page">Inicio</a></li>
+          <li><a href="entorno.html">Mi entorno</a></li>
+          <li><a href="sobre-mi.html">Sobre mí</a></li>
+          <li><a href="proyectos.html">Proyectos</a></li>
+          <li><a href="cv.html">CV</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
       </ul>
-    </li>
-    <li>Personales
+    </nav>
+  </header>
+
+  <main id="contenido">
+    <section>
+      <h2>Hola, soy Xavi</h2>
+      <img src="img/avatar.png" alt="Avatar dibujado de un chico con pelo castaño y cascos de música verdes sobre fondo azul" width="200" height="200">
+      <p>
+        Soy estudiante de <strong>1.º de DAM</strong>
+        y estoy dando mis primeros pasos en el mundo de la programación. Me gusta entender
+        <em>cómo funcionan las cosas por dentro</em>.
+      </p>
+      <p>
+        Si quieres saber qué hago cuando no estoy delante del ordenador, mira
+        <a href="sobre-mi.html#aficiones">mis aficiones en la página Sobre mí</a>.
+        Y si quieres ver lo que he hecho en clase, pasa por <a href="proyectos.html">mi galería de proyectos</a>.
+      </p>
+    </section>
+
+    <section>
+      <h2>Qué sé hacer</h2>
+      <p>Mis intereses:</p>
       <ul>
-        <li>Trabajo en equipo</li>
-        <li>Organización</li>
-        <li>Ganas de aprender</li>
+        <li>La programación y la tecnología</li>
+        <li>Los videojuegos</li>
+        <li>La música</li>
+        <li>El deporte</li>
       </ul>
-    </li>
-  </ul>
 
-  <h2>Qué quiero aprender</h2>
-  <p>Mis tres objetivos del curso, por orden de prioridad:</p>
-  <ol>
-    <li>Aprender lo maximo posible</li>
-    <li>Aprender a programar con soltura.</li>
-    <li>Publicar mi portfolio en GitHub.</li>
-  </ol>
+      <p>Mis habilidades, agrupadas:</p>
+      <ul>
+        <li>Informática
+          <ul>
+            <li>Velocidad en las manos</li>
+            <li>Usar comandos básicos de Linux</li>
+            <li>Trabajar con VS Code bastante bien</li>
+          </ul>
+        </li>
+        <li>Personales
+          <ul>
+            <li>Trabajo en equipo</li>
+            <li>Organización</li>
+            <li>Ganas de aprender</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
 
-  <p>Una cita que me gusta:</p>
-  <blockquote>
-    <p>Mas vale la pena en el rostro, que la mancha en el corazon.</p>
-    <cite>Cervantes</cite>
-  </blockquote>
+    <section>
+      <h2>Qué quiero aprender</h2>
+      <p>Mis tres objetivos del curso, por orden de prioridad:</p>
+      <ol>
+        <li>Aprender lo máximo posible.</li>
+        <li>Aprender a programar con soltura.</li>
+        <li>Publicar mi portfolio en GitHub.</li>
+      </ol>
+    </section>
 
-  <h2>Glosario</h2>
-  <dl>
-    <dt>HTML</dt>
-    <dd>Lenguaje de marcas con el que se escribe la estructura de una página web.</dd>
-    <dt>Linux</dt>
-    <dd>Sistema operativo libre que se maneja muy bien desde el terminal.</dd>
-    <dt>GitHub</dt>
-    <dd>Plataforma para guardar y publicar proyectos de código.</dd>
-  </dl>
+    <section>
+      <h2>Glosario</h2>
+      <dl>
+        <dt>HTML</dt>
+        <dd>Lenguaje de marcas con el que se escribe la estructura de una página web.</dd>
+        <dt>Linux</dt>
+        <dd>Sistema operativo libre que se maneja muy bien desde el terminal.</dd>
+        <dt>GitHub</dt>
+        <dd>Plataforma para guardar y publicar proyectos de código.</dd>
+      </dl>
+    </section>
 
-  <p>2026 Xavi Almela Marti · Hecho con 0&nbsp;&euro; de presupuesto</p>
+    <aside>
+      <h2>Ahora estoy aprendiendo</h2>
+      <ul>
+        <li>Arrays en Java (Programación).</li>
+        <li>Comandos y tuberías de Linux (Sistemas Informáticos).</li>
+        <li>HTML semántico (Lenguajes de marcas).</li>
+      </ul>
+      <p>Una cita que me gusta:</p>
+      <blockquote>
+        <p>Más vale la pena en el rostro que la mancha en el corazón.</p>
+        <cite>Miguel de Cervantes</cite>
+      </blockquote>
+    </aside>
+
+    <p><a href="#arriba">Volver arriba</a></p>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Xavi Almela Marti · <a href="https://github.com/almelaxavimarti-beep" target="_blank" rel="noopener noreferrer">Mi perfil de GitHub (se abre en otra pestaña)</a></p>
+  </footer>
 </body>
 
 </html>

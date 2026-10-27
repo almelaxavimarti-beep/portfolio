@@ -1,8 +1,83 @@
-<h2>Estructura de mi portfolio</h2>
-<pre>
-portfolio/
-├── img/
-├── index.html
-├── entorno.html
-└── README.md
-</pre>
+<!-- Xavi Almela Marti · Actividad 7 · 27/10/2026 -->
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi entorno · Xavi Almela</title>
+</head>
+
+<body>
+  <a href="#contenido">Saltar al contenido</a>
+
+  <header id="arriba">
+    <h1>Mi entorno de trabajo</h1>
+    <nav aria-label="Menú principal">
+      <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="entorno.html" aria-current="page">Mi entorno</a></li>
+          <li><a href="sobre-mi.html">Sobre mí</a></li>
+          <li><a href="proyectos.html">Proyectos</a></li>
+          <li><a href="cv.html">CV</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="contenido">
+    <p>Estas son las herramientas que uso en clase para hacer mis páginas y mis programas.</p>
+
+    <section>
+      <h2>Editor de código</h2>
+      <p>
+        Uso <a href="https://code.visualstudio.com/" target="_blank" rel="noopener noreferrer">Visual Studio Code (se abre en otra pestaña)</a>.
+        Me gusta porque colorea el código, autocompleta las etiquetas y tiene un terminal integrado.
+      </p>
+      <p>Atajos que más uso:</p>
+      <ul>
+        <li><kbd>Ctrl</kbd> + <kbd>S</kbd>: guardar el archivo.</li>
+        <li><kbd>Ctrl</kbd> + <kbd>Ñ</kbd>: abrir el terminal.</li>
+        <li><kbd>!</kbd> + <kbd>Tab</kbd>: crear la estructura básica de un HTML.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Control de versiones</h2>
+      <p>
+        Guardo mi trabajo con <strong>Git</strong> y lo publico en
+        <a href="https://github.com/almelaxavimarti-beep" target="_blank" rel="noopener noreferrer">mi perfil de GitHub (se abre en otra pestaña)</a>.
+        Los comandos que más uso son:
+      </p>
+      <ol>
+        <li><code>git add .</code> para preparar los cambios.</li>
+        <li><code>git commit -m "mensaje"</code> para guardarlos con una descripción.</li>
+        <li><code>git push</code> para subirlos a GitHub.</li>
+      </ol>
+    </section>
+
+    <section>
+      <h2>Navegador</h2>
+      <p>
+        Abro mis páginas en el navegador para comprobar cómo se ven. Con <kbd>F12</kbd> abro las
+        herramientas de desarrollador y reviso el HTML.
+      </p>
+    </section>
+
+    <section>
+      <h2>Sistema operativo</h2>
+      <p>
+        Gracias a lo que aprendí en TSMR me muevo bien por el terminal de <strong>Linux</strong>:
+        <code>ls</code>, <code>cd</code>, <code>mkdir</code>, <code>grep</code>…
+      </p>
+    </section>
+
+    <p><a href="#arriba">Volver arriba</a></p>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Xavi Almela Marti · <a href="https://github.com/almelaxavimarti-beep" target="_blank" rel="noopener noreferrer">Mi perfil de GitHub (se abre en otra pestaña)</a></p>
+  </footer>
+</body>
+
+</html>

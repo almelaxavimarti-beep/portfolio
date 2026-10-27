@@ -1,0 +1,20 @@
+PRESENTACIÓN · XAVI ALMELA MARTI
+================================
+
+Hola, soy Xavi y estudio 1.º de Desarrollo de Aplicaciones Multiplataforma (DAM).
+
+Antes estudié el ciclo medio de Sistemas Microinformáticos y Redes (TSMR).
+Mi pasión siempre ha sido la informática: quiero conocer todos sus aspectos
+y entender cómo funciona por dentro.
+
+Lo que estoy aprendiendo este curso:
+  - HTML para crear páginas web.
+  - Java para programar.
+  - Bases de datos.
+  - Git y GitHub para guardar y publicar mi trabajo.
+
+Fuera de clase me gusta la música, salir a la montaña a hacer senderismo
+y los videojuegos.
+
+Contacto: almelaxavimarti@gmail.com
+GitHub:   https://github.com/almelaxavimarti-beep
