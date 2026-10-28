@@ -1,165 +1,384 @@
-/* Estilos básicos del portfolio · Xavi Almela · v1 */
+/* Estilos del portfolio · Xavi Almela · v1 */
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@400;600&display=swap");
 
 :root {
-  --fondo: #f6f7f9;
-  --texto: #1f2933;
-  --suave: #5b6672;
-  --acento: #1f6feb;
-  --cabecera: #16202c;
+  --fondo: #f3f5f9;
+  --texto: #1c2430;
+  --suave: #5d6878;
   --tarjeta: #ffffff;
-  --borde: #dde2e8;
+  --borde: #e2e7ee;
+  --oscuro: #0f172a;
+  --acento: #10b981;
+  --acento-2: #3b82f6;
+  --degradado: linear-gradient(135deg, #10b981 0%, #3b82f6 100%);
+  --sombra: 0 1px 2px rgba(15, 23, 42, 0.06), 0 8px 24px rgba(15, 23, 42, 0.06);
+  --sombra-alta: 0 4px 8px rgba(15, 23, 42, 0.08), 0 16px 40px rgba(15, 23, 42, 0.12);
+  --radio: 14px;
 }
 
 * { box-sizing: border-box; }
 
+html { scroll-behavior: smooth; }
+
 body {
   margin: 0;
-  font-family: system-ui, "Segoe UI", Roboto, Arial, sans-serif;
-  line-height: 1.6;
+  font-family: "Inter", system-ui, "Segoe UI", Roboto, Arial, sans-serif;
+  line-height: 1.65;
   color: var(--texto);
   background: var(--fondo);
 }
 
-/* Enlace "Saltar al contenido": oculto hasta que se usa con el teclado */
+::selection { background: var(--acento); color: #fff; }
+
+/* ---------- Saltar al contenido ---------- */
 body > a:first-child {
   position: absolute;
   left: -999px;
-  top: 0.5rem;
-  padding: 0.5rem 1rem;
+  top: 0.75rem;
+  padding: 0.6rem 1.1rem;
   background: var(--acento);
   color: #fff;
-  border-radius: 6px;
-  z-index: 10;
+  font-weight: 600;
+  border-radius: 8px;
+  z-index: 100;
 }
-body > a:first-child:focus { left: 0.5rem; }
+body > a:first-child:focus { left: 0.75rem; }
 
-/* Cabecera y menú */
+/* ---------- Cabecera ---------- */
 header {
-  background: var(--cabecera);
+  position: relative;
   color: #fff;
-  padding: 1.5rem 1rem 1rem;
   text-align: center;
+  padding: 3rem 1rem 0;
+  background:
+    radial-gradient(circle at 15% 20%, rgba(16, 185, 129, 0.35), transparent 45%),
+    radial-gradient(circle at 85% 0%, rgba(59, 130, 246, 0.35), transparent 50%),
+    var(--oscuro);
 }
-header h1 { margin: 0 0 0.75rem; font-size: 2rem; }
+header h1 {
+  margin: 0 0 1.75rem;
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+header h1::after {
+  content: "";
+  display: block;
+  width: 64px;
+  height: 4px;
+  margin: 0.75rem auto 0;
+  border-radius: 4px;
+  background: var(--degradado);
+}
+
+/* Menú fijo al hacer scroll */
+header nav {
+  position: sticky;
+  top: 0;
+  padding: 0.75rem 0;
+}
 header nav ul {
   list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
+  margin: 0 auto;
+  padding: 0.35rem;
+  display: inline-flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 0.5rem;
+  gap: 0.25rem;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  backdrop-filter: blur(8px);
 }
 header nav a {
   display: block;
-  padding: 0.35rem 0.9rem;
-  color: #cfd8e3;
+  padding: 0.45rem 1rem;
+  color: #cbd5e1;
+  font-weight: 600;
+  font-size: 0.95rem;
   text-decoration: none;
   border-radius: 999px;
+  transition: background 0.2s, color 0.2s;
 }
 header nav a:hover { background: rgba(255, 255, 255, 0.12); color: #fff; }
-header nav a[aria-current="page"] { background: var(--acento); color: #fff; }
+header nav a[aria-current="page"] { background: var(--degradado); color: #fff; }
 
-/* Contenido */
+/* ---------- Contenido ---------- */
 main {
-  max-width: 60rem;
+  max-width: 64rem;
   margin: 0 auto;
-  padding: 1.5rem 1rem 2rem;
+  padding: 2.5rem 1.25rem 3rem;
 }
+
+main > p:first-child {
+  font-size: 1.1rem;
+  color: var(--suave);
+  max-width: 48rem;
+}
+
 section, aside, main > nav {
   background: var(--tarjeta);
   border: 1px solid var(--borde);
-  border-radius: 10px;
-  padding: 1rem 1.5rem;
-  margin-bottom: 1.25rem;
+  border-radius: var(--radio);
+  box-shadow: var(--sombra);
+  padding: 1.75rem 2rem;
+  margin-bottom: 1.5rem;
 }
-aside { border-left: 5px solid var(--acento); }
-h2 { margin-top: 0.25rem; color: var(--cabecera); }
 
-a { color: var(--acento); }
-a:focus-visible { outline: 3px solid var(--acento); outline-offset: 2px; }
+h2 {
+  margin: 0 0 1rem;
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--oscuro);
+}
+h2::before {
+  content: "";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin-right: 0.6rem;
+  border-radius: 3px;
+  background: var(--degradado);
+  vertical-align: middle;
+}
 
-img { max-width: 100%; height: auto; border-radius: 8px; }
-img[src*="avatar"] { border-radius: 50%; float: right; margin: 0 0 1rem 1rem; }
+strong { color: var(--oscuro); }
+
+a {
+  color: var(--acento-2);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+a:hover { color: var(--acento); }
+a:focus-visible { outline: 3px solid var(--acento); outline-offset: 3px; border-radius: 4px; }
+
+ul li::marker, ol li::marker { color: var(--acento); font-weight: 700; }
+
+/* Índice de anclas de Sobre mí */
+main > nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+main > nav a {
+  display: block;
+  padding: 0.4rem 0.9rem;
+  border: 1px solid var(--borde);
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
+}
+main > nav a:hover { border-color: var(--acento); }
+
+/* Avatar */
+img { max-width: 100%; height: auto; border-radius: 10px; }
+img[src*="avatar"] {
+  float: right;
+  width: 170px;
+  margin: 0 0 1rem 1.5rem;
+  border-radius: 50%;
+  padding: 5px;
+  background: var(--degradado);
+  box-shadow: var(--sombra-alta);
+}
 section::after { content: ""; display: block; clear: both; }
 
+/* Aside "Ahora estoy aprendiendo" */
+aside {
+  background: var(--oscuro);
+  color: #e2e8f0;
+  border: none;
+}
+aside h2 { color: #fff; }
+aside strong { color: #fff; }
+aside code { background: rgba(255, 255, 255, 0.1); color: #a7f3d0; }
+
 blockquote {
-  margin: 0.5rem 0;
-  padding: 0.5rem 1rem;
-  border-left: 3px solid var(--borde);
-  color: var(--suave);
+  margin: 0.75rem 0 0;
+  padding: 0.75rem 1.25rem;
+  border-left: 4px solid var(--acento);
+  border-radius: 0 10px 10px 0;
+  background: rgba(255, 255, 255, 0.05);
   font-style: italic;
 }
+blockquote p { margin: 0 0 0.25rem; }
+cite { font-size: 0.9rem; opacity: 0.8; }
 
-code, pre {
-  font-family: Consolas, "Courier New", monospace;
-  background: #eef1f5;
-  border-radius: 4px;
-  padding: 0.1rem 0.3rem;
+/* Código */
+code, pre { font-family: "JetBrains Mono", Consolas, monospace; font-size: 0.88em; }
+code {
+  background: #eef2f7;
+  color: #0f766e;
+  padding: 0.1rem 0.35rem;
+  border-radius: 5px;
 }
-pre { padding: 0.75rem 1rem; overflow-x: auto; }
+pre {
+  background: var(--oscuro);
+  color: #e2e8f0;
+  padding: 1rem 1.25rem;
+  border-radius: 10px;
+  overflow-x: auto;
+}
+pre code { background: none; color: inherit; padding: 0; }
 
-/* Proyectos: tarjetas en rejilla */
+/* Listas de definiciones (glosario) */
+dt { font-weight: 800; color: var(--oscuro); margin-top: 0.75rem; }
+dd { margin: 0.15rem 0 0; color: var(--suave); }
+
+/* ---------- Proyectos ---------- */
 section:has(article) {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+  gap: 1.25rem;
+  background: none;
+  border: none;
+  box-shadow: none;
+  padding: 0;
 }
 section:has(article) > h2 { grid-column: 1 / -1; }
+
 article {
+  display: flex;
+  flex-direction: column;
+  background: var(--tarjeta);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio);
+  box-shadow: var(--sombra);
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+  scroll-margin-top: 5rem;
+}
+article:hover, article:target {
+  transform: translateY(-4px);
+  box-shadow: var(--sombra-alta);
+}
+article:target { outline: 3px solid var(--acento); }
+article h3 {
+  order: 2;
+  margin: 1rem 1.25rem 0;
+  font-size: 1.1rem;
+  line-height: 1.35;
+  color: var(--oscuro);
+}
+article figure { display: contents; }
+article img {
+  order: 1;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 0;
+  border-bottom: 1px solid var(--borde);
+}
+figcaption {
+  order: 3;
+  padding: 0.5rem 1.25rem 1.25rem;
+  font-size: 0.93rem;
+  color: var(--suave);
+}
+figure { margin: 0; }
+
+/* ---------- Tablas ---------- */
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin: 0.5rem 0 1rem;
   border: 1px solid var(--borde);
   border-radius: 10px;
-  padding: 1rem;
-  background: var(--fondo);
+  overflow: hidden;
 }
-article h3 { margin-top: 0; }
-figure { margin: 0; }
-figcaption { font-size: 0.92rem; color: var(--suave); margin-top: 0.5rem; }
+caption { text-align: left; font-weight: 600; color: var(--suave); padding-bottom: 0.6rem; }
+th, td {
+  padding: 0.7rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--borde);
+}
+tbody tr:last-child th, tbody tr:last-child td { border-bottom: none; }
+thead th { background: var(--oscuro); color: #fff; font-weight: 600; }
+tbody th { background: #f1f5f9; color: var(--oscuro); }
+tbody tr:hover td { background: #f8fafc; }
+td[rowspan], th[rowspan] { border-right: 1px solid var(--borde); }
 
-/* Tablas */
-table { width: 100%; border-collapse: collapse; margin: 0.5rem 0 1rem; }
-caption { text-align: left; font-weight: bold; padding-bottom: 0.5rem; }
-th, td { border: 1px solid var(--borde); padding: 0.5rem 0.75rem; text-align: left; }
-thead th { background: var(--cabecera); color: #fff; }
-tbody th { background: #eef1f5; }
-
-/* Formulario */
+/* ---------- Formulario ---------- */
 fieldset {
   border: 1px solid var(--borde);
-  border-radius: 8px;
-  margin-bottom: 1rem;
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  margin: 0 0 1.25rem;
 }
-legend { font-weight: bold; padding: 0 0.4rem; }
-p > label:first-child { display: block; font-weight: 600; margin-bottom: 0.25rem; }
+legend { font-weight: 800; padding: 0 0.5rem; color: var(--oscuro); }
+p > label:first-child { display: block; font-weight: 600; margin-bottom: 0.35rem; }
+
 input[type="text"], input[type="email"], select, textarea {
   width: 100%;
-  padding: 0.5rem;
-  border: 1px solid #b8c1cc;
-  border-radius: 6px;
+  padding: 0.7rem 0.9rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  background: #fff;
   font: inherit;
+  transition: border-color 0.2s, box-shadow 0.2s;
 }
+textarea { min-height: 8rem; resize: vertical; }
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: var(--acento);
+  box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.18);
+}
+input[type="radio"], input[type="checkbox"] { accent-color: var(--acento); width: 1.1rem; height: 1.1rem; vertical-align: middle; }
+
 button, input[type="submit"] {
-  background: var(--acento);
+  background: var(--degradado);
   color: #fff;
   border: 0;
-  border-radius: 6px;
-  padding: 0.6rem 1.2rem;
+  border-radius: 999px;
+  padding: 0.8rem 1.8rem;
   font: inherit;
+  font-weight: 700;
   cursor: pointer;
+  box-shadow: var(--sombra);
+  transition: transform 0.15s, box-shadow 0.15s;
 }
-button:hover, input[type="submit"]:hover { filter: brightness(1.1); }
+button:hover, input[type="submit"]:hover { transform: translateY(-2px); box-shadow: var(--sombra-alta); }
 
-/* Pie */
+/* "Volver arriba" */
+a[href="#arriba"] {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--borde);
+  border-radius: 999px;
+  background: var(--tarjeta);
+  text-decoration: none;
+  font-weight: 600;
+}
+a[href="#arriba"]::before { content: "↑ "; }
+
+/* ---------- Pie ---------- */
 footer {
   text-align: center;
-  padding: 1.25rem 1rem;
-  color: var(--suave);
-  border-top: 1px solid var(--borde);
+  padding: 2rem 1rem;
+  background: var(--oscuro);
+  color: #94a3b8;
+  font-size: 0.95rem;
+}
+footer a { color: #a7f3d0; }
+
+/* ---------- Móvil ---------- */
+@media (max-width: 40rem) {
+  header { padding-top: 2rem; }
+  header nav ul { border-radius: 16px; }
+  main { padding: 1.5rem 0.9rem 2rem; }
+  section, aside, main > nav { padding: 1.25rem; }
+  th, td { padding: 0.45rem 0.5rem; font-size: 0.85rem; }
+  img[src*="avatar"] { float: none; display: block; margin: 0 auto 1.25rem; width: 140px; }
 }
 
-/* Móvil */
-@media (max-width: 40rem) {
-  section, aside, main > nav { padding: 0.75rem 1rem; }
-  th, td { padding: 0.35rem 0.4rem; font-size: 0.85rem; }
-  img[src*="avatar"] { float: none; display: block; margin: 0 auto 1rem; }
+/* Respeta a quien prefiere menos animaciones */
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; scroll-behavior: auto !important; }
 }
