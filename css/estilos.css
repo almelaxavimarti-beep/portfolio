@@ -1,0 +1,165 @@
+/* Estilos básicos del portfolio · Xavi Almela · v1 */
+
+:root {
+  --fondo: #f6f7f9;
+  --texto: #1f2933;
+  --suave: #5b6672;
+  --acento: #1f6feb;
+  --cabecera: #16202c;
+  --tarjeta: #ffffff;
+  --borde: #dde2e8;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: system-ui, "Segoe UI", Roboto, Arial, sans-serif;
+  line-height: 1.6;
+  color: var(--texto);
+  background: var(--fondo);
+}
+
+/* Enlace "Saltar al contenido": oculto hasta que se usa con el teclado */
+body > a:first-child {
+  position: absolute;
+  left: -999px;
+  top: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: var(--acento);
+  color: #fff;
+  border-radius: 6px;
+  z-index: 10;
+}
+body > a:first-child:focus { left: 0.5rem; }
+
+/* Cabecera y menú */
+header {
+  background: var(--cabecera);
+  color: #fff;
+  padding: 1.5rem 1rem 1rem;
+  text-align: center;
+}
+header h1 { margin: 0 0 0.75rem; font-size: 2rem; }
+header nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+}
+header nav a {
+  display: block;
+  padding: 0.35rem 0.9rem;
+  color: #cfd8e3;
+  text-decoration: none;
+  border-radius: 999px;
+}
+header nav a:hover { background: rgba(255, 255, 255, 0.12); color: #fff; }
+header nav a[aria-current="page"] { background: var(--acento); color: #fff; }
+
+/* Contenido */
+main {
+  max-width: 60rem;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 2rem;
+}
+section, aside, main > nav {
+  background: var(--tarjeta);
+  border: 1px solid var(--borde);
+  border-radius: 10px;
+  padding: 1rem 1.5rem;
+  margin-bottom: 1.25rem;
+}
+aside { border-left: 5px solid var(--acento); }
+h2 { margin-top: 0.25rem; color: var(--cabecera); }
+
+a { color: var(--acento); }
+a:focus-visible { outline: 3px solid var(--acento); outline-offset: 2px; }
+
+img { max-width: 100%; height: auto; border-radius: 8px; }
+img[src*="avatar"] { border-radius: 50%; float: right; margin: 0 0 1rem 1rem; }
+section::after { content: ""; display: block; clear: both; }
+
+blockquote {
+  margin: 0.5rem 0;
+  padding: 0.5rem 1rem;
+  border-left: 3px solid var(--borde);
+  color: var(--suave);
+  font-style: italic;
+}
+
+code, pre {
+  font-family: Consolas, "Courier New", monospace;
+  background: #eef1f5;
+  border-radius: 4px;
+  padding: 0.1rem 0.3rem;
+}
+pre { padding: 0.75rem 1rem; overflow-x: auto; }
+
+/* Proyectos: tarjetas en rejilla */
+section:has(article) {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+  gap: 1rem;
+}
+section:has(article) > h2 { grid-column: 1 / -1; }
+article {
+  border: 1px solid var(--borde);
+  border-radius: 10px;
+  padding: 1rem;
+  background: var(--fondo);
+}
+article h3 { margin-top: 0; }
+figure { margin: 0; }
+figcaption { font-size: 0.92rem; color: var(--suave); margin-top: 0.5rem; }
+
+/* Tablas */
+table { width: 100%; border-collapse: collapse; margin: 0.5rem 0 1rem; }
+caption { text-align: left; font-weight: bold; padding-bottom: 0.5rem; }
+th, td { border: 1px solid var(--borde); padding: 0.5rem 0.75rem; text-align: left; }
+thead th { background: var(--cabecera); color: #fff; }
+tbody th { background: #eef1f5; }
+
+/* Formulario */
+fieldset {
+  border: 1px solid var(--borde);
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+legend { font-weight: bold; padding: 0 0.4rem; }
+p > label:first-child { display: block; font-weight: 600; margin-bottom: 0.25rem; }
+input[type="text"], input[type="email"], select, textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #b8c1cc;
+  border-radius: 6px;
+  font: inherit;
+}
+button, input[type="submit"] {
+  background: var(--acento);
+  color: #fff;
+  border: 0;
+  border-radius: 6px;
+  padding: 0.6rem 1.2rem;
+  font: inherit;
+  cursor: pointer;
+}
+button:hover, input[type="submit"]:hover { filter: brightness(1.1); }
+
+/* Pie */
+footer {
+  text-align: center;
+  padding: 1.25rem 1rem;
+  color: var(--suave);
+  border-top: 1px solid var(--borde);
+}
+
+/* Móvil */
+@media (max-width: 40rem) {
+  section, aside, main > nav { padding: 0.75rem 1rem; }
+  th, td { padding: 0.35rem 0.4rem; font-size: 0.85rem; }
+  img[src*="avatar"] { float: none; display: block; margin: 0 auto 1rem; }
+}
